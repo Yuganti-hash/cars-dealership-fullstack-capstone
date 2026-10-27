@@ -1,0 +1,130 @@
+.register_container {
+  max-width: 500px;
+  margin: 3rem auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.header_panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0b3c5d;
+  color: #ffffff;
+  padding: 1.2rem 1.5rem;
+}
+
+.title_text {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.close_btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0 0.4rem;
+  line-height: 1;
+}
+
+.register_form {
+  padding: 1.8rem;
+}
+
+.error_message {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  border-left: 4px solid #ef4444;
+}
+
+.success_message {
+  background-color: #dcfce7;
+  color: #15803d;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  border-left: 4px solid #22c55e;
+}
+
+.input_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.input_group {
+  margin-bottom: 1.2rem;
+}
+
+.input_group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.4rem;
+}
+
+.input_group input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input_group input:focus {
+  border-color: #328cc1;
+  box-shadow: 0 0 0 3px rgba(50, 140, 193, 0.15);
+}
+
+.submit_panel {
+  margin-top: 1.5rem;
+}
+
+.btn_register {
+  width: 100%;
+  background-color: #0b3c5d;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn_register:hover {
+  background-color: #328cc1;
+}
+
+.login_redirect {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.login_redirect a {
+  color: #328cc1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login_redirect a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Best Car Dealership Retailer</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <a href="/" class="brand">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="13" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+      Best<span>Cars</span> Dealership
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact" class="active">Contact Us</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+    </ul>
+  </header>
+
+  <main class="container">
+    <!-- Header Banner -->
+    <section class="page-header">
+      <h1>Contact Best Car Dealerships</h1>
+      <p>Have questions about inventory, financing, or reviews? Reach out to our customer advocacy team or locate your regional dealership headquarters.</p>
+    </section>
+
+    <!-- Contact Details & Headquarter Overview -->
+    <section class="grid-2">
+      <!-- Contact Info Card -->
+      <div class="card">
+        <h3>National Customer Support</h3>
+        <p style="margin-bottom: 1.5rem;">Our support specialists are available Monday through Saturday to answer questions regarding dealer reviews, online appointments, and inventory verification.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">National Headquarters</div>
+            <div class="contact-val">1200 Grand Boulevard, Suite 500<br>Kansas City, MO 64106, USA</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Toll-Free Phone</div>
+            <div class="contact-val">+1 (800) 555-CARS (2277) / (816) 555-0199</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">General Inquiries</div>
+            <div class="contact-val">contact@bestcardealership.com</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🕒</div>
+          <div>
+            <div class="contact-label">Business Hours</div>
+            <div class="contact-val">Mon - Fri: 8:00 AM - 8:00 PM CST<br>Saturday: 9:00 AM - 6:00 PM CST<br>Sunday: Closed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regional Dealership Inquiries & Message Box -->
+      <div class="card">
+        <h3>Direct Regional Support</h3>
+        <p style="margin-bottom: 1.5rem;">Send a direct inquiry to our dealership coordination team or request assistance with a specific branch location.</p>
+        
+        <form onsubmit="event.preventDefault(); alert('Thank you for contacting Best Car Dealerships. A representative will contact you shortly.');">
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: #1f2937;" for="contact-name">Your Full Name</label>
+            <input type="text" id="contact-name" required placeholder="John Doe" style="width: 100%; padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem;">
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: #1f2937;" for="contact-email">Email Address</label>
+            <input type="email" id="contact-email" required placeholder="john.doe@example.com" style="width: 100%; padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem;">
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: #1f2937;" for="contact-state">State / Dealership Hub</label>
+            <select id="contact-state" style="width: 100%; padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem;">
+              <option value="KS">Kansas (KS)</option>
+              <option value="CA">California (CA)</option>
+              <option value="TX">Texas (TX)</option>
+              <option value="NY">New York (NY)</option>
+              <option value="ALL">Other Regional Hub</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 1.2rem;">
+            <label style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: #1f2937;" for="contact-msg">Message</label>
+            <textarea id="contact-msg" rows="4" required placeholder="How can our dealership network assist you today?" style="width: 100%; padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem;"></textarea>
+          </div>
+          <button type="submit" style="background-color: #0b3c5d; color: white; border: none; padding: 0.75rem 1.8rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 1rem;">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Best Car Dealership Network. All rights reserved. | Built for IBM Full Stack Cloud Development Capstone</p>
+  </footer>
+</body>
+</html>
