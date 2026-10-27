@@ -1,0 +1,45 @@
+Executable cURL Command:
+curl -X GET http://127.0.0.1:8000/djangoapp/get_dealers/Kansas
+
+Actual Response (HTTP 200):
+{
+  "status": 200,
+  "dealers": [
+    {
+      "id": 1,
+      "city": "Wichita",
+      "state": "Kansas",
+      "st": "KS",
+      "address": "3450 N Rock Rd",
+      "zip": "67226",
+      "lat": "37.7471",
+      "long": "-97.2443",
+      "short_name": "Kansas Auto Central",
+      "full_name": "Kansas Auto Central Dealership"
+    },
+    {
+      "id": 2,
+      "city": "Overland Park",
+      "state": "Kansas",
+      "st": "KS",
+      "address": "8775 Metcalf Ave",
+      "zip": "66212",
+      "lat": "38.9691",
+      "long": "-94.6685",
+      "short_name": "Overland Park Motors",
+      "full_name": "Overland Park Motors & Dealership"
+    },
+    {
+      "id": 3,
+      "city": "Topeka",
+      "state": "Kansas",
+      "st": "KS",
+      "address": "2946 S Kansas Ave",
+      "zip": "66611",
+      "lat": "39.0125",
+      "long": "-95.6744",
+      "short_name": "Topeka Premier Cars",
+      "full_name": "Topeka Premier Cars Dealership"
+    }
+  ]
+}

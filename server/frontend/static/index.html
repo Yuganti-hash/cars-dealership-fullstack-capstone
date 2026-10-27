@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Cars Dealership - National Retailer Network</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar" id="app-nav">
+    <a href="/" class="brand" onclick="navigateTo(event, '/')">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="13" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+      Best<span>Cars</span> Dealership
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" id="nav-home" class="active" onclick="navigateTo(event, '/')">Home</a></li>
+      <li><a href="/about/" id="nav-about">About Us</a></li>
+      <li><a href="/contact/" id="nav-contact">Contact Us</a></li>
+      
+      <!-- Unauthenticated State -->
+      <li id="nav-auth-loggedout" style="display: flex; gap: 0.5rem;">
+        <button class="nav-btn btn-login" onclick="openLoginModal()">Login</button>
+        <button class="nav-btn btn-register" onclick="openRegisterModal()">Register</button>
+      </li>
+
+      <!-- Authenticated State -->
+      <li id="nav-auth-loggedin" style="display: none; align-items: center; gap: 1rem;">
+        <span class="user-greeting">Welcome, <strong id="current-username">User</strong></span>
+        <button class="nav-btn btn-logout" onclick="performLogout()">Logout</button>
+      </li>
+    </ul>
+  </header>
+
+  <!-- Main Dynamic App Root -->
+  <main class="container" id="app-root">
+    <!-- Loaded dynamically by app.js -->
+  </main>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Login to Dealership Portal</h3>
+        <button class="close-modal-btn" onclick="closeLoginModal()">✕</button>
+      </div>
+      <form id="login-form" onsubmit="handleLoginSubmit(event)">
+        <div id="login-error" class="error-badge" style="display: none;"></div>
+        <div class="form-group">
+          <label for="login-username">Username</label>
+          <input type="text" id="login-username" required placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required placeholder="Enter password">
+        </div>
+        <button type="submit" class="submit-action-btn">Sign In</button>
+        <div class="modal-switch-text">
+          Don't have an account? <a href="#" onclick="closeLoginModal(); openRegisterModal();">Register here</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="register-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Create New Account</h3>
+        <button class="close-modal-btn" onclick="closeRegisterModal()">✕</button>
+      </div>
+      <form id="register-form" onsubmit="handleRegisterSubmit(event)">
+        <div id="register-error" class="error-badge" style="display: none;"></div>
+        <div id="register-success" class="success-badge" style="display: none;"></div>
+        <div class="form-group">
+          <label for="reg-username">Username</label>
+          <input type="text" id="reg-username" required placeholder="Choose a username">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reg-firstname">First Name</label>
+            <input type="text" id="reg-firstname" required placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label for="reg-lastname">Last Name</label>
+            <input type="text" id="reg-lastname" required placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" required placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" required placeholder="Password (minimum 6 characters)">
+        </div>
+        <button type="submit" class="submit-action-btn">Register</button>
+        <div class="modal-switch-text">
+          Already registered? <a href="#" onclick="closeRegisterModal(); openLoginModal();">Log in</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Best Car Dealership Network. All rights reserved. | IBM Full Stack Software Development Capstone</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

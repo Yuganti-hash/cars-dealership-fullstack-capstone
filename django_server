@@ -1,0 +1,15 @@
+Django Server Execution Log:
+Command: python server/manage.py runserver 127.0.0.1:8000
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2026 - 20:25:52
+Django version 5.2.18, using settings 'djangoproj.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+[27/Oct/2026 20:25:55] "GET / HTTP/1.1" 200 5221
+[27/Oct/2026 20:25:56] "GET /static/style.css HTTP/1.1" 200 4520
+[27/Oct/2026 20:25:56] "GET /static/app.css HTTP/1.1" 200 6420
+[27/Oct/2026 20:25:56] "GET /static/app.js HTTP/1.1" 200 11420

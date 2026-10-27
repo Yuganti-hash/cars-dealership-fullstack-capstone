@@ -1,0 +1,8 @@
+Executable cURL Command:
+curl -X GET http://127.0.0.1:8000/djangoapp/logout
+
+Actual Response (HTTP 200):
+{
+  "userName": "",
+  "status": "Logged out"
+}

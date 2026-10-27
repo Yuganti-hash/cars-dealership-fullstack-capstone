@@ -1,0 +1,21 @@
+Executable cURL Command:
+curl -X GET http://127.0.0.1:8000/djangoapp/dealer/1
+
+Actual Response (HTTP 200):
+{
+  "status": 200,
+  "dealer": [
+    {
+      "id": 1,
+      "city": "Wichita",
+      "state": "Kansas",
+      "st": "KS",
+      "address": "3450 N Rock Rd",
+      "zip": "67226",
+      "lat": "37.7471",
+      "long": "-97.2443",
+      "short_name": "Kansas Auto Central",
+      "full_name": "Kansas Auto Central Dealership"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+Executable cURL Command:
+curl -X GET http://127.0.0.1:8000/djangoapp/get_reviews/1
+
+Actual Response (HTTP 200):
+{
+  "status": 200,
+  "reviews": [
+    {
+      "id": 1,
+      "dealership": 1,
+      "name": "Alex Morgan",
+      "review": "Fantastic services and very courteous staff. The sales team made purchasing our SUV seamless and transparent.",
+      "purchase": true,
+      "purchase_date": "02/14/2026",
+      "car_make": "Audi",
+      "car_model": "Q5",
+      "car_year": 2024,
+      "sentiment": "positive"
+    },
+    {
+      "id": 2,
+      "dealership": 1,
+      "name": "Jordan Lee",
+      "review": "Great pricing and fair trade-in valuation. Highly recommend this dealership for anyone in Kansas looking for honest advice.",
+      "purchase": true,
+      "purchase_date": "01/22/2026",
+      "car_make": "Toyota",
+      "car_model": "Camry",
+      "car_year": 2023,
+      "sentiment": "positive"
+    },
+    {
+      "id": 3,
+      "dealership": 1,
+      "name": "Taylor Smith",
+      "review": "Average experience. Vehicle delivery was delayed by two days due to detailing backlog, but the vehicle runs great.",
+      "purchase": true,
+      "purchase_date": "03/05/2026",
+      "car_make": "Ford",
+      "car_model": "F-150",
+      "car_year": 2024,
+      "sentiment": "neutral"
+    }
+  ]
+}

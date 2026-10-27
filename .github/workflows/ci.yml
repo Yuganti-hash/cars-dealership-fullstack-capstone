@@ -1,0 +1,97 @@
+name: Cars Dealership Full-Stack CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-test:
+    name: Backend Lint, Migrations & Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r server/requirements.txt
+          pip install flake8 pytest
+
+      - name: Lint with flake8
+        run: |
+          # Stop build if there are Python syntax errors or undefined names
+          flake8 server/djangoapp --count --select=E9,F63,F7,F82 --show-source --statistics
+          # Exit-zero treats all errors as warnings
+          flake8 server/djangoapp --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+      - name: Run Django System Checks
+        run: |
+          cd server
+          python manage.py check
+
+      - name: Run Database Migrations
+        run: |
+          cd server
+          python manage.py makemigrations djangoapp
+          python manage.py migrate
+
+      - name: Populate Test Database
+        run: |
+          cd server
+          python setup_data.py
+
+      - name: Execute Django Test Suite
+        run: |
+          cd server
+          python manage.py test djangoapp.tests
+
+  docker-build:
+    name: Build & Verify Docker Container
+    runs-on: ubuntu-latest
+    needs: build-and-test
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t cars-dealership:latest .
+
+      - name: Container Smoke Test
+        run: |
+          docker run -d --name dealership-app -p 8000:8000 -e DJANGO_SECRET_KEY=ci-secret-key cars-dealership:latest
+          sleep 5
+          docker ps
+          docker logs dealership-app
+          curl -f http://localhost:8000/ || exit 1
+          docker stop dealership-app
+
+  deploy:
+    name: Deploy to Cloud Platform
+    runs-on: ubuntu-latest
+    needs: [build-and-test, docker-build]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Verify Deployment Credentials
+        run: |
+          echo "Verifying IBM Cloud Code Engine or Container Registry Secrets..."
+          if [ -n "${{ secrets.IBM_CLOUD_API_KEY }}" ]; then
+            echo "IBM Cloud API Key detected. Initializing deployment pipeline."
+          else
+            echo "No external deployment secret configured. Skipping remote CD deployment step."
+          fi
