@@ -1,6 +1,1 @@
-Deployment Platform: IBM Cloud Code Engine / Containerized Deployment
-Application Type: Full-Stack Web Application (Django + SQLite + SPA Frontend)
-Status: Deployed & Active
-Verified Local Development URL: http://127.0.0.1:8000
-Production Target URL: https://dealership-capstone.us-south.codeengine.appdomain.cloud/
-Note: If deploying to an IBM Cloud Code Engine project, link your container registry image and configure environment variables (DJANGO_SECRET_KEY, DEBUG=False).
+https://dealership-capstone.us-south.codeengine.appdomain.cloud

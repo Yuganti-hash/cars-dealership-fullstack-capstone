@@ -1,4 +1,7 @@
-# Best Cars Dealership - Full-Stack Development Capstone
+# fullstack_developer_capstone
+
+**Repository**: `xrwvm-fullstack_developer_capstone`  
+**Project Name**: `fullstack_developer_capstone` (Cars Dealership Full-Stack Development Capstone)
 
 A production-grade, responsive full-stack automotive web application built for a national car dealership retailer in the United States, developed for the **IBM / Coursera Full Stack Cloud Development Capstone Project**.
 

@@ -212,7 +212,7 @@ async function renderHomeView(selectedState = 'all') {
   try {
     const res = await fetch(url);
     const data = await res.json();
-    currentDealers = data.dealers || [];
+    currentDealers = Array.isArray(data) ? data : (data.dealers || []);
     renderDealersTable(currentDealers);
   } catch (err) {
     document.getElementById('dealers-tbody').innerHTML = `
@@ -285,7 +285,7 @@ async function renderDealerDetailsView(dealerId) {
     // 1. Fetch dealer details
     const dealerRes = await fetch(`/djangoapp/dealer/${dealerId}`);
     const dealerData = await dealerRes.json();
-    const dealer = (dealerData.dealer && dealerData.dealer[0]) || null;
+    const dealer = Array.isArray(dealerData) ? dealerData[0] : ((dealerData.dealer && dealerData.dealer[0]) || dealerData);
 
     if (dealer) {
       document.getElementById('dealer-header-placeholder').innerHTML = `
@@ -307,7 +307,7 @@ async function renderDealerDetailsView(dealerId) {
     // 2. Fetch reviews
     const revRes = await fetch(`/djangoapp/get_reviews/${dealerId}`);
     const revData = await revRes.json();
-    const reviews = revData.reviews || [];
+    const reviews = Array.isArray(revData) ? revData : (revData.reviews || []);
 
     const reviewsContainer = document.getElementById('reviews-container');
     if (reviews.length === 0) {

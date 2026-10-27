@@ -87,7 +87,7 @@ const Register = () => {
             type="text"
             id="username"
             name="username"
-            placeholder="Choose a username"
+            placeholder="Username"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
             required
@@ -101,7 +101,7 @@ const Register = () => {
               type="text"
               id="firstName"
               name="firstName"
-              placeholder="First name"
+              placeholder="First Name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
@@ -114,7 +114,7 @@ const Register = () => {
               type="text"
               id="lastName"
               name="lastName"
-              placeholder="Last name"
+              placeholder="Last Name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
@@ -128,7 +128,7 @@ const Register = () => {
             type="email"
             id="email"
             name="email"
-            placeholder="name@example.com"
+            placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -141,7 +141,7 @@ const Register = () => {
             type="password"
             id="password"
             name="password"
-            placeholder="Create password (min 6 characters)"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required

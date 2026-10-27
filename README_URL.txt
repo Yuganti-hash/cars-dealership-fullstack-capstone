@@ -1,6 +1,1 @@
-Public GitHub Repository README URL:
-https://github.com/yuganti-hatwar/cars-dealership-fullstack-capstone/blob/main/README.md
-
-File Location in Workspace:
-server/README.md
-README.md
+https://github.com/Yuganti-hash/xrwvm-fullstack_developer_capstone/blob/main/README.md

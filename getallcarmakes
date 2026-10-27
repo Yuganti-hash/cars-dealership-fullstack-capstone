@@ -3,119 +3,66 @@ curl -X GET http://127.0.0.1:8000/djangoapp/get_cars
 
 Actual Response (HTTP 200):
 {
-  "status": 200,
   "CarModels": [
     {
+      "CarModel": "Pathfinder",
+      "CarMake": "NISSAN"
+    },
+    {
+      "CarModel": "Qashqai",
+      "CarMake": "NISSAN"
+    },
+    {
+      "CarModel": "XTRAIL",
+      "CarMake": "NISSAN"
+    },
+    {
+      "CarModel": "A-Class",
+      "CarMake": "Mercedes"
+    },
+    {
+      "CarModel": "C-Class",
+      "CarMake": "Mercedes"
+    },
+    {
+      "CarModel": "E-Class",
+      "CarMake": "Mercedes"
+    },
+    {
       "CarModel": "A4",
-      "CarMake": "Audi",
-      "Type": "SEDAN",
-      "Year": 2023,
-      "Dealer_ID": 1
+      "CarMake": "Audi"
+    },
+    {
+      "CarModel": "A5",
+      "CarMake": "Audi"
     },
     {
       "CarModel": "A6",
-      "CarMake": "Audi",
-      "Type": "SEDAN",
-      "Year": 2024,
-      "Dealer_ID": 1
+      "CarMake": "Audi"
     },
     {
-      "CarModel": "Q5",
-      "CarMake": "Audi",
-      "Type": "SUV",
-      "Year": 2024,
-      "Dealer_ID": 1
+      "CarModel": "Sorrento",
+      "CarMake": "Kia"
     },
     {
-      "CarModel": "F-150",
-      "CarMake": "Ford",
-      "Type": "TRUCK",
-      "Year": 2024,
-      "Dealer_ID": 1
+      "CarModel": "Carnival",
+      "CarMake": "Kia"
     },
     {
-      "CarModel": "Mustang",
-      "CarMake": "Ford",
-      "Type": "COUPE",
-      "Year": 2023,
-      "Dealer_ID": 2
-    },
-    {
-      "CarModel": "Explorer",
-      "CarMake": "Ford",
-      "Type": "SUV",
-      "Year": 2024,
-      "Dealer_ID": 3
-    },
-    {
-      "CarModel": "Camry",
-      "CarMake": "Toyota",
-      "Type": "SEDAN",
-      "Year": 2023,
-      "Dealer_ID": 1
+      "CarModel": "Cerato",
+      "CarMake": "Kia"
     },
     {
       "CarModel": "Corolla",
-      "CarMake": "Toyota",
-      "Type": "SEDAN",
-      "Year": 2024,
-      "Dealer_ID": 2
+      "CarMake": "Toyota"
     },
     {
-      "CarModel": "RAV4",
-      "CarMake": "Toyota",
-      "Type": "SUV",
-      "Year": 2024,
-      "Dealer_ID": 3
+      "CarModel": "Camry",
+      "CarMake": "Toyota"
     },
     {
-      "CarModel": "Civic",
-      "CarMake": "Honda",
-      "Type": "SEDAN",
-      "Year": 2023,
-      "Dealer_ID": 2
-    },
-    {
-      "CarModel": "Accord",
-      "CarMake": "Honda",
-      "Type": "SEDAN",
-      "Year": 2024,
-      "Dealer_ID": 2
-    },
-    {
-      "CarModel": "CR-V",
-      "CarMake": "Honda",
-      "Type": "SUV",
-      "Year": 2024,
-      "Dealer_ID": 1
-    },
-    {
-      "CarModel": "3 Series",
-      "CarMake": "BMW",
-      "Type": "SEDAN",
-      "Year": 2023,
-      "Dealer_ID": 4
-    },
-    {
-      "CarModel": "X5",
-      "CarMake": "BMW",
-      "Type": "SUV",
-      "Year": 2024,
-      "Dealer_ID": 5
-    },
-    {
-      "CarModel": "Altima",
-      "CarMake": "Nissan",
-      "Type": "SEDAN",
-      "Year": 2023,
-      "Dealer_ID": 6
-    },
-    {
-      "CarModel": "Rogue",
-      "CarMake": "Nissan",
-      "Type": "SUV",
-      "Year": 2024,
-      "Dealer_ID": 7
+      "CarModel": "Kluger",
+      "CarMake": "Toyota"
     }
   ]
 }

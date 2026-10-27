@@ -5,26 +5,31 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangoproj.settings')
 django.setup()
 
 from django.contrib.auth.models import User
+from djangoapp.models import CarMake, CarModel
 from djangoapp.populate import initiate
 
 def setup():
-    # 1. Populate cars and models
+    # 1. Reset and populate 15 car models
+    CarModel.objects.all().delete()
+    CarMake.objects.all().delete()
     initiate()
 
-    # 2. Create superuser if not exists
-    if not User.objects.filter(username='admin').exists():
-        admin = User.objects.create_superuser('admin', 'admin@example.com', 'adminpassword123')
-        admin.first_name = 'Site'
-        admin.last_name = 'Admin'
-        admin.save()
-        print("Superuser 'admin' created successfully.")
+    # 2. Create root superuser (for Task 12 Admin login)
+    if not User.objects.filter(username='root').exists():
+        root = User.objects.create_superuser('root', 'root@example.com', 'rootpassword123')
+        root.first_name = ''
+        root.last_name = ''
+        root.save()
+        print("Superuser 'root' created successfully.")
     else:
-        u = User.objects.get(username='admin')
-        u.set_password('adminpassword123')
-        u.is_superuser = True
-        u.is_staff = True
-        u.save()
-        print("Superuser 'admin' password updated.")
+        r = User.objects.get(username='root')
+        r.set_password('rootpassword123')
+        r.first_name = ''
+        r.last_name = ''
+        r.is_superuser = True
+        r.is_staff = True
+        r.save()
+        print("Superuser 'root' updated.")
 
     # 3. Create regular test user
     if not User.objects.filter(username='testuser').exists():
@@ -37,7 +42,6 @@ def setup():
         u = User.objects.get(username='testuser')
         u.set_password('testpassword123')
         u.save()
-        print("Test user 'testuser' password updated.")
 
 if __name__ == '__main__':
     setup()

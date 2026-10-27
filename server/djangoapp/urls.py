@@ -9,13 +9,13 @@ urlpatterns = [
     path('logout', views.logout_request, name='logout'),
     path('register', views.registration, name='register'),
 
-    # Car makes and models
+    # Car makes and models (Tasks 14 and 15)
     path('get_cars', views.get_cars, name='getcars'),
 
     # Dealership routes
-    path('get_dealers', views.get_dealerships, name='get_dealers'),
-    path('get_dealers/<str:state>', views.get_dealerships, name='get_dealers_by_state'),
-    path('dealer/<int:dealer_id>', views.get_dealer_details, name='dealer_details'),
+    path('get_dealers', views.get_dealers, name='get_dealers'),
+    path('get_dealers/<str:state>', views.get_dealers, name='get_dealers_by_state'),
+    path('dealer/<int:dealer_id>', views.get_dealer_by_id, name='dealer_details'),
 
     # Review routes
     path('get_reviews/<int:dealer_id>', views.get_dealer_reviews, name='get_reviews'),
